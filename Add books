@@ -1,0 +1,21 @@
+// Function to add a book
+void addBook() {
+    if (bookCount >= MAX_BOOKS) {
+        printf("Library is full! Cannot add more books.\n");
+        return 0;
+    }
+
+    Book newBook;
+    printf("Enter Book ID: ");
+    scanf("%d", &newBook.id);
+    printf("Enter Book Title: ");
+    getchar(); 
+    fgets(newBook.title, sizeof(newBook.title), stdin);
+    newBook.title[strcspn(newBook.title, "\n")] = '\0'; // Remove newline character
+    printf("Enter Book Author: ");
+    fgets(newBook.author, sizeof(newBook.author), stdin);
+    newBook.author[strcspn(newBook.author, "\n")] = '\0'; // Remove newline character
+
+    library[bookCount++] = newBook;
+    printf("Book added successfully!\n");
+}
