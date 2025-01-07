@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_BOOKS 100
+
+// Structure to represent a book
+typedef struct {
+    int id;
+    char title[100];
+    char author[100];
+} Book;
+
+// Global array to store books and the count
+Book library[MAX_BOOKS];
+int bookCount = 0;
+
+// Function declarations
+void addBook();
+void displayBooks();
+void searchBook();
+void deleteBook();
